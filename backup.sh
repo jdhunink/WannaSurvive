@@ -1,8 +1,8 @@
 #!/bin/sh
 #What files or folders to backup (should this be passed in?)
 #This should be passed in from the users selection in the gui
-backup_files="$1" 
-dest="$2"
+# backup_files="$1" 
+# dest="$2"
 #create backup directory if it does not already exist
 #This should be probably be configured by th user and passed in
 mkdir -p $dest/backups

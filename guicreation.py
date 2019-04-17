@@ -23,8 +23,10 @@ def schedule_backup():
 
 def backup_now():
     print("Backing Up Now")
+    subprocess.call('chmod 775 mount.sh', shell=True)
+    subprocess.call('chmod 775 backup.sh', shell=True)
     args = []
-    args.append('./backup.sh')
+    args.append('./mount.sh')
     args.append(str(dir_folder_path.get()))
     args.append(str(destination_folder_path.get()))
     p = subprocess.Popen(args)
