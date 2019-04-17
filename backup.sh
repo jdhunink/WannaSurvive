@@ -1,13 +1,13 @@
 
 #What files or folders to backup (should this be passed in?)
 #This should be passed in from the users selection in the gui
-backup_files="" 
+backup_files="$1" 
 
 #create backup directory if it does not already exist
 #This should be probably be configured by th user and passed in
 mkdir -p backups
 #set destination of backup to created directory.
-dest="backups"
+dest="$2"
 
 #create archive filename
 day=$(date +%Y-%m-%d-%T)
