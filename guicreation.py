@@ -3,6 +3,8 @@ from tkinter import *
 import subprocess
 
 backup_script = "backup.sh"
+dir_folder_path = ''
+destination_folder_path = ''
 
 def backup_browse_button():
     global dir_folder_path
@@ -21,10 +23,10 @@ def schedule_backup():
 
 def backup_now():
     print("Backing Up Now")
-    args = [2]
-    args[0] = 'backup.sh'
-    args[1] = dir_folder_path
-    args[2] = destination_folder_path
+    args = []
+    args.append('./backup.sh')
+    args.append(str(dir_folder_path.get()))
+    args.append(str(destination_folder_path.get()))
     p = subprocess.Popen(args)
 
 
