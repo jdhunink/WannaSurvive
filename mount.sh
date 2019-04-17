@@ -2,6 +2,8 @@
 
 #Path to the drive to mount/unmount
 drive_path = "$1"
+backup_files="$2"
+dest="$3"
 
 #Begin by mounting the drive from drive_path
 usr/bin/mount /drive_path /bu_mnt
