@@ -1,5 +1,8 @@
 from tkinter import filedialog
 from tkinter import *
+import subprocess
+
+backup_script = "backup.sh"
 
 def backup_browse_button():
     global dir_folder_path
@@ -18,6 +21,12 @@ def schedule_backup():
 
 def backup_now():
     print("Backing Up Now")
+    args = [2]
+    args[0] = 'backup.sh'
+    args[1] = dir_folder_path
+    args[2] = destination_folder_path
+    p = subprocess.Popen(args)
+
 
 class MyFirstGUI:
     def __init__(self, master):
